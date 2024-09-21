@@ -30,7 +30,60 @@ This project aims to enhance safety and awareness in rural areas near forest reg
 
 ## Getting Started
 
-(Add instructions on how to set up and run your project here)
+Follow these steps to set up the project and start detecting animals using YOLO:
+
+1. **Clone the Repository**
+   ```
+   git clone https://github.com/your-username/animal-sighting-rural-areas.git
+   cd animal-sighting-rural-areas
+   ```
+
+2. **Set Up a Python Environment**
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. **Install Dependencies**
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. **Prepare Your Dataset**
+   - Collect images of animals you want to detect.
+   - Annotate the images using a tool like LabelImg in YOLO format.
+   - Organize your dataset into the following structure:
+     ```
+     dataset/
+     ├── images/
+     │   ├── train/
+     │   └── val/
+     └── labels/
+         ├── train/
+         └── val/
+     ```
+
+5. **Configure YOLO**
+   - Create a `data.yaml` file with your dataset and class information:
+     ```yaml
+     train: dataset/images/train
+     val: dataset/images/val
+     nc: 5  # number of classes
+     names: ['elephant', 'tiger', 'leopard', 'bear', 'wild_boar']  # class names
+     ```
+
+6. **Train YOLO Model**
+   ```
+   python train.py --img 640 --batch 16 --epochs 100 --data data.yaml --weights yolov5s.pt
+   ```
+
+7. **Run Inference**
+   ```
+   python detect.py --source path/to/test/images --weights runs/train/exp/weights/best.pt
+   ```
+
+8. **Integrate with Alert System**
+   - Modify the `detect.py` script to send alerts when animals are detected.
 
 ## Prerequisites
 
