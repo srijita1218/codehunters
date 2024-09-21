@@ -87,28 +87,10 @@ Follow these steps to set up the project and start detecting animals using YOLO:
 
 ## Prerequisites
 
-(List any software, libraries, or hardware requirements here)
+- Python 3.8+
+- PyTorch
+- OpenCV
+- Ultralytics YOLO
 
-## Installation
 
-(Provide step-by-step installation instructions here)
 
-## Usage
-
-(Explain how to use your system, including any command-line instructions or GUI interactions)
-
-## Contributing
-
-(If you're open to contributions, provide guidelines on how others can contribute to your project)
-
-## License
-
-(Specify the license under which your project is released)
-
-## Contact
-
-(Provide your contact information or ways for users to reach out with questions or feedback)
-
-## Acknowledgments
-
-(Credit any individuals, organizations, or resources that have been helpful in your project)
